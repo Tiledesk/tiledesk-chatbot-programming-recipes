@@ -17,3 +17,4 @@ Create a free [Tiledesk](https://tiledesk.com/) account. Then create a new Tiled
 Ignore al the other tutorial steps, and just land on the project's dashboard.
 
 Now move on the sidebar and choose the _Settings > Bots_ section. Press the _Add bot_ button. Choose _Resolution_
+
