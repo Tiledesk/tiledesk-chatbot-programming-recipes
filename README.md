@@ -1,6 +1,6 @@
 # tiledesk-fallback-to-search-tutorial
 
-This tutorial will show you how to continure after a fallback on the native Resolution bot seamlessly to a suggested list of search results from a Knowledge base.
+This tutorial demonstrates how to seamlessly continue after a fallback on the Resolution bot to a suggested list of search results from a Knowledge base (Wikipedia).
 
 ## Introduction
 
