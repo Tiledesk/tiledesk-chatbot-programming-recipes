@@ -28,3 +28,16 @@ When asked, Activate this bot.
 ![image](https://user-images.githubusercontent.com/32564846/120278436-90d9e400-c2b5-11eb-8f8a-a71cb473fa4b.png)
 
 Optionally you can further configure your bot (i.e. choosing a profile image, improving training etc.) but we'll skip these steps, opting to focus on the Wikipedia integration. Target of our chatbot is, every time a fallback event occurs, using the question phrase of the end user to trigger a search on Wikipedia, showing the results to the user.
+
+Once we create our new Resolution bot, we can move to the Webhooks section of your proect. Select _Settings > Proect settings > Developer > Webhook_ as in the following picture:
+
+![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
+
+Now press _Manage Webhook_ then _Add Subscription_
+
+The select the *Message create* event and insert the endpoint:
+
+https://chatbot-fallback-to-search.tiledesk.repl.co/webhook/search
+
+![image](https://user-images.githubusercontent.com/32564846/120284466-8ff88080-c2bc-11eb-8de6-208f2dfade0c.png)
+
