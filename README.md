@@ -17,3 +17,5 @@ Skip with their default values all the other steps during project creation, and 
 
 Now move on the sidebar and choose the _Settings > Bots_ section. Press the _Add bot_ button. Choose _Resolution_
 
+![image](https://user-images.githubusercontent.com/32564846/120277845-e19d0d00-c2b4-11eb-9e7a-7e67b9751a43.png)
+
