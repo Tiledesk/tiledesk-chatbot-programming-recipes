@@ -19,3 +19,12 @@ Now move on the sidebar and choose the _Settings > Bots_ section. Press the _Add
 
 ![image](https://user-images.githubusercontent.com/32564846/120277845-e19d0d00-c2b4-11eb-9e7a-7e67b9751a43.png)
 
+Now choose a name and a description for your chatbot:
+
+![image](https://user-images.githubusercontent.com/32564846/120278354-77389c80-c2b5-11eb-85b4-4546ed000b4a.png)
+
+When asked, Activate this bot.
+
+![image](https://user-images.githubusercontent.com/32564846/120278436-90d9e400-c2b5-11eb-8f8a-a71cb473fa4b.png)
+
+Optionally you can further configure your bot (i.e. choosing a profile image, improving training etc.) but we'll skip these steps, opting to focus on the Wikipedia integration. Target of our chatbot is, every time a fallback event occurs, using the question phrase of the end user to trigger a search on Wikipedia, showing the results to the user.
