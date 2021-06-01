@@ -35,9 +35,27 @@ Once we create our new Resolution bot, we can move to the Webhooks section of yo
 
 Now press _Manage Webhook_ then _Add Subscription_
 
-The select the *Message create* event and insert the endpoint:
+Select *Message create* event from the menù and type the following endpoint url:
 
 https://chatbot-fallback-to-search.tiledesk.repl.co/webhook/search
 
 ![image](https://user-images.githubusercontent.com/32564846/120284466-8ff88080-c2bc-11eb-8de6-208f2dfade0c.png)
 
+After this subscription setup your endpoint will be notified on every message sent on your proect.
+
+Before going deep into the mechanics of the tutorial, we can already see it in action.
+
+From the top of your dashboard press the green button "Simulate visitor". A page with a widget appears. Just start a new conversation. If you type Hello the bot will reply with the trained reply:
+
+![image](https://user-images.githubusercontent.com/32564846/120288118-2a0df800-c2c0-11eb-8ca7-fa2779df3704.png)
+
+Now type in something that the chatbot is not trained to reply to (i.e. 'quantum field' or whatever you like)
+
+![image](https://user-images.githubusercontent.com/32564846/120288614-b28c9880-c2c0-11eb-88fd-9b445ec73f13.png)
+
+As you can see the bot initially replies with the default fallback phrase, immediately followed by a new reply with a suggested list of Wikipedia results.
+
+![image](https://user-images.githubusercontent.com/32564846/120288813-eb2c7200-c2c0-11eb-915a-0f74a5c198a0.png)
+
+
+![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
