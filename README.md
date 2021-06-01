@@ -57,5 +57,3 @@ As you can see the bot initially replies with the default fallback phrase, immed
 
 ![image](https://user-images.githubusercontent.com/32564846/120288813-eb2c7200-c2c0-11eb-915a-0f74a5c198a0.png)
 
-
-![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
