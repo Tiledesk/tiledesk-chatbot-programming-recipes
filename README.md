@@ -37,9 +37,17 @@ The source code is also available on Github [here](https://github.com/Tiledesk/t
 
 Fork the application in your own repl (or on your own server) so you can modify the code, primarily with the scope of connecting your own Knowledge Base (Wikipedia here is just used as an example).
 
+![image](https://user-images.githubusercontent.com/32564846/120932896-f3891080-c6f7-11eb-9c10-1203e03101bc.png)
 
+Choose a new name for the application. We used _my-chatbot-fallback-to-search_, but you feel free to use your preferred name.
 
-Once we create our new Resolution bot, we can move to the Webhooks section of your proect. Select _Settings > Proect settings > Developer > Webhook_ as in the following picture:
+![image](https://user-images.githubusercontent.com/32564846/120932951-321ecb00-c6f8-11eb-94c4-9a60a6d948ab.png)
+
+Now press the Run button on top like in the following picture:
+
+![image](https://user-images.githubusercontent.com/32564846/120933051-ace7e600-c6f8-11eb-8728-b023a4653a8d.png)
+
+Once we setuop our Replit application and our Resolution bot, we can move to the Webhooks section of your proect. Select _Settings > Proect settings > Developer > Webhook_ as in the following picture:
 
 ![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
 
