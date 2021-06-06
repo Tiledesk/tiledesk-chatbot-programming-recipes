@@ -41,11 +41,11 @@ https://chatbot-fallback-to-search.tiledesk.repl.co/webhook/search
 
 ![image](https://user-images.githubusercontent.com/32564846/120284466-8ff88080-c2bc-11eb-8de6-208f2dfade0c.png)
 
-After this subscription setup your endpoint will be notified on every message sent on your proect.
+After this subscription your endpoint will be notified about every message sent on your proect.
 
 Before going deep into the mechanics of the tutorial, we can already see it in action.
 
-From the top of your dashboard press the green button "Simulate visitor". A page with a widget appears. Just start a new conversation. If you type Hello the bot will reply with the trained reply:
+From the top of your dashboard press the green button "Simulate visitor". A page with a widget appears. Just start a new conversation. If you type Hello the bot will reply with the trained intent:
 
 ![image](https://user-images.githubusercontent.com/32564846/120288118-2a0df800-c2c0-11eb-8ca7-fa2779df3704.png)
 
@@ -57,3 +57,15 @@ As you can see the bot initially replies with the default fallback phrase, immed
 
 ![image](https://user-images.githubusercontent.com/32564846/120288813-eb2c7200-c2c0-11eb-915a-0f74a5c198a0.png)
 
+The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in another 
+The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in the browser.
+
+The source code used in this example is this repl.it application:
+
+https://replit.com/@tiledesk/chatbot-fallback-to-search#index.js
+
+We suggest you to fork the application in your own repl (or on your own server) so you can modify the code, primarily with the scope of connecting your own Knowledge Base (Wikipedia here is just used as an example).
+
+The source code is also available on Github [here](https://github.com/Tiledesk/tiledesk-fallback-to-search-tutorial)
+
+Enjoy Tiledesk!

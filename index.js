@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 // search on a knowledge base (wikipedia) sending back to the user
 // chat a set of results coming from the knowledge base (using url-buttons)
 app.post('/webhook/search', async (req, res) => {
-  console.log('webhook tiledesk ');
+  console.log('tiledesk webhook. ', req.connection.remoteAddress);
   //console.log('req.body ', JSON.stringify(req.body.payload.attributes));
   res.send(200);
   
