@@ -29,6 +29,16 @@ When asked, Activate this bot.
 
 Optionally you can further configure your bot (i.e. choosing a profile image, improving training etc.) but we'll skip these steps, opting to focus on the Wikipedia integration. Target of our chatbot is, every time a fallback event occurs, using the question phrase of the end user to trigger a search on Wikipedia, showing the results to the user.
 
+## Programmatic management of your fallbacks
+
+The source code used in this example is available as a [replit](https://replit.com) application [here](https://replit.com/@tiledesk/chatbot-fallback-to-search#index.js).
+
+The source code is also available on Github [here](https://github.com/Tiledesk/tiledesk-fallback-to-search-tutorial)
+
+Fork the application in your own repl (or on your own server) so you can modify the code, primarily with the scope of connecting your own Knowledge Base (Wikipedia here is just used as an example).
+
+
+
 Once we create our new Resolution bot, we can move to the Webhooks section of your proect. Select _Settings > Proect settings > Developer > Webhook_ as in the following picture:
 
 ![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
@@ -59,13 +69,5 @@ As you can see the bot initially replies with the default fallback phrase, immed
 
 The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in another 
 The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in the browser.
-
-The source code used in this example is this repl.it application:
-
-https://replit.com/@tiledesk/chatbot-fallback-to-search#index.js
-
-We suggest you to fork the application in your own repl (or on your own server) so you can modify the code, primarily with the scope of connecting your own Knowledge Base (Wikipedia here is just used as an example).
-
-The source code is also available on Github [here](https://github.com/Tiledesk/tiledesk-fallback-to-search-tutorial)
 
 Enjoy Tiledesk!
