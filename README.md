@@ -43,11 +43,11 @@ Choose a new name for the application. We used _my-chatbot-fallback-to-search_, 
 
 ![image](https://user-images.githubusercontent.com/32564846/120932951-321ecb00-c6f8-11eb-94c4-9a60a6d948ab.png)
 
-Now press the Run button on top like in the following picture:
+Once the application is forked, press the Run button on the top bar, as in the following picture:
 
 ![image](https://user-images.githubusercontent.com/32564846/120933051-ace7e600-c6f8-11eb-8728-b023a4653a8d.png)
 
-Once we setuop our Replit application and our Resolution bot, we can move to the Webhooks section of your proect. Select _Settings > Proect settings > Developer > Webhook_ as in the following picture:
+Once our Replit app is up and running, we can move to the Webhooks section of your project. Select _Settings > Project settings > Developer > Webhook_ as in the following picture:
 
 ![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
 
@@ -55,7 +55,7 @@ Now press _Manage Webhook_ then _Add Subscription_
 
 Select *Message create* event from the menù and type the following endpoint url:
 
-https://chatbot-fallback-to-search.tiledesk.repl.co/webhook/search
+https://mychatbot-fallback-to-search.YOUR-REPL.repl.co/webhook/search
 
 ![image](https://user-images.githubusercontent.com/32564846/120284466-8ff88080-c2bc-11eb-8de6-208f2dfade0c.png)
 
