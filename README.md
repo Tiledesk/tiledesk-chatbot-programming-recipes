@@ -74,8 +74,7 @@ Now type in something that the chatbot is not trained to reply to (i.e. 'quantum
 As you can see the bot initially replies with the default fallback phrase, immediately followed by a new reply with a suggested list of Wikipedia results.
 
 ![image](https://user-images.githubusercontent.com/32564846/120288813-eb2c7200-c2c0-11eb-915a-0f74a5c198a0.png)
-
-The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in another 
-The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in the browser.
+ 
+The proposed buttons are link-buttons. Pressing the button will open the Wikipedia article in the browser.
 
 Enjoy Tiledesk!
