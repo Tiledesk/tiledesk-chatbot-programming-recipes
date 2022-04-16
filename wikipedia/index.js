@@ -1,5 +1,5 @@
 /* 
-    Andrea Sponziello - (c) Tiledesk.com
+    Andrea Sponziello - (c) 2022 Tiledesk.com
 */
 
 const axios = require('axios');
@@ -56,10 +56,10 @@ class Wikipedia {
                 let titles = json[1];
                 let urls = json[3];
                 for (let i = 0; i < titles.length; i++) {
-                  console.log("title:", titles[i]);
-                  console.log("url:", urls[i]);
+                  // console.log("title:", titles[i]);
+                  // console.log("url:", urls[i]);
                   results.push({title: titles[i], path: urls[i]})
-                  console.log("resu", results)
+                  // console.log("resu", results)
                 }
             }
             callback(null, results);

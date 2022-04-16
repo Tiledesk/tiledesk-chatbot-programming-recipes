@@ -1,3 +1,7 @@
+/* 
+    Andrea Sponziello - (c) 2022 Tiledesk.com
+*/
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const { TiledeskClient } = require('@tiledesk/tiledesk-client');
@@ -96,17 +100,19 @@ app.post('/webhook/search', async (req, res) => {
       });
     if (attributes.attachment.buttons.length > 0) {
       tdclient.sendSupportMessage(request_id, msg, function(err, result) {
-        console.log("err?", err);
+        if (err) {
+          console.log("An error occurred:", err);
+        }
       });
     }
   });
  });
 
 app.post('/whfallback', async (req, res) => {
-  console.log('req.body ', JSON.stringify(req.body));
+  // console.log('req.body ', JSON.stringify(req.body));
   // INTENTS
   const intent = req.body.payload.intent.intent_display_name
-  console.log("intent:", intent);
+  // console.log("intent:", intent);
   if (intent === 'fallback') {
     let text = req.body.payload.message.text;
     let token = req.body.token;
@@ -127,7 +133,7 @@ app.post('/whfallback', async (req, res) => {
         text: 'Look at these articles on Wikipedia',
         attributes: attributes
       };
-      console.log("sending back:", JSON.stringify(msg));
+      // console.log("sending back:", JSON.stringify(msg));
       res.json(msg);
     });
   }
