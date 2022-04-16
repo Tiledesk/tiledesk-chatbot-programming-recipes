@@ -15,50 +15,50 @@ app.use(bodyParser.json());
 // search on a knowledge base (wikipedia) sending back to the user
 // chat a set of results coming from the knowledge base (using url-buttons)
 app.post('/webhook/search', async (req, res) => {
-  console.log('tiledesk webhook. ', req.connection.remoteAddress);
+  // console.log('tiledesk webhook. ', req.connection.remoteAddress);
   //console.log('req.body ', JSON.stringify(req.body.payload.attributes));
   res.send(200);
   
   var project_id = req.body.hook.id_project;
-  console.log('project_id ', project_id);
+  // console.log('project_id ', project_id);
 
   const payload = req.body.payload;
 
   var sender_id = payload.sender; //"bot_" + bot._id;
-  console.log('sender_id ', sender_id);
+  // console.log('sender_id ', sender_id);
   
   var senderFullname = payload.senderFullname; //bot.name;
-  console.log('senderFullname ', senderFullname);
+  // console.log('senderFullname ', senderFullname);
   
   var token = req.body.token;
-  console.log('token ', token);
+  // console.log('token ', token);
   
   var request_id = payload.recipient;
-  console.log('request_id ', request_id);
+  // console.log('request_id ', request_id);
 
   if (!req.body.payload.attributes.intent_info) {
     return;
   }
 
-  console.log("intent_info ok", req.body.payload.attributes.intent_info);
+  //console.log("intent_info ok", req.body.payload.attributes.intent_info);
 
   const is_fallback = req.body.payload.attributes.intent_info.is_fallback;
   const intent_confidence = req.body.payload.attributes.intent_info.confidence;
-  console.log("INFO", req.body.payload.attributes.intent_info);
+  // console.log("INFO", req.body.payload.attributes.intent_info);
   let confidence_threshold = 0.7;
-  console.log("confidence_threshold", confidence_threshold);
-  console.log("intent_confidence < confidence_threshold", intent_confidence < confidence_threshold)
+  // console.log("confidence_threshold", confidence_threshold);
+  // console.log("intent_confidence < confidence_threshold", intent_confidence < confidence_threshold)
   if (is_fallback || (!is_fallback && intent_confidence < confidence_threshold)) {
-    console.log("starting Wikipedia search...");
+    // console.log("starting Wikipedia search...");
   }
   else {
     return;
   }
   
   var question_payload = req.body.payload.attributes.intent_info.question_payload;
-  console.log("question_payload", question_payload)
+  // console.log("question_payload", question_payload)
   var text = question_payload.text;
-  console.log('text ', text);
+  // console.log('text ', text);
 
   const wikipedia = new Wikipedia()
   wikipedia.doQuery(text, (err, results) => {
@@ -76,32 +76,66 @@ app.post('/webhook/search', async (req, res) => {
           buttons: []
       }
     };
-    // it creates a set of URL-buttons for the resultset
+    // creating a set of URL-buttons (type 'self') for the resultset
     results.forEach(content => {
-      var button = {type:"url", value: content.title, link: content.path}
+      const mobileUrl = content.path.replace(".wikipedia.org", ".m.wikipedia.org");
+      var button = {type:"url", value: content.title, link: mobileUrl, target: "self"}
       attributes.attachment.buttons.push(button);
     });
     var msg = {
-      text: 'You can be interested in this articles on Wikipedia',
+      text: 'You can be anyway interested in this articles on Wikipedia 🧐',
       sender: sender_id,
       senderFullname: senderFullname,
       attributes: attributes
     };
     const tdclient = new TiledeskClient(
       {
+        projectId: project_id,
         APIKEY: '__APIKEY__',
-        project_id: project_id,
-        token: token,
-        APIURL: 'https://tiledesk-server-pre.herokuapp.com',
-        log: false
+        token: token
       });
     if (attributes.attachment.buttons.length > 0) {
-      tdclient.sendMessage(request_id, msg, function(err, result) {
+      tdclient.sendSupportMessage(request_id, msg, function(err, result) {
         console.log("err?", err);
       });
     }
   });
  });
+
+app.post('/whfallback', async (req, res) => {
+  console.log('req.body ', JSON.stringify(req.body));
+  // INTENTS
+  const intent = req.body.payload.intent.intent_display_name
+  console.log("intent:", intent);
+  if (intent === 'fallback') {
+    let text = req.body.payload.message.text;
+    let token = req.body.token;
+    const wikipedia = new Wikipedia()
+    wikipedia.doQuery(text, (err, results) => {
+      let attributes = {
+        attachment: {
+            type:"template",
+            buttons: []
+        }
+      };
+      // it creates a set of URL-buttons for the resultset
+      results.forEach(content => {
+        var button = {type:"url", value: content.title, link: content.path}
+        attributes.attachment.buttons.push(button);
+      });
+      var msg = {
+        text: 'Look at these articles on Wikipedia',
+        attributes: attributes
+      };
+      console.log("sending back:", JSON.stringify(msg));
+      res.json(msg);
+    });
+  }
+});
+
+app.get('/', (req, res) => {
+  res.status(200).send("Tiledesk fallback-to-search Tutorial");
+});
 
 // just have fun with this Wikipedia search api test-endpoint :)
 app.get('/search', (req, res) => {
