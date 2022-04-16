@@ -37,9 +37,17 @@ The source code is also available on Github [here](https://github.com/Tiledesk/t
 
 Fork the application in your own repl (or on your own server) so you can modify the code, primarily with the scope of connecting your own Knowledge Base (Wikipedia here is just used as an example).
 
+![image](https://user-images.githubusercontent.com/32564846/120932896-f3891080-c6f7-11eb-9c10-1203e03101bc.png)
 
+Choose a new name for the application. We used _my-chatbot-fallback-to-search_, but you feel free to use your preferred name.
 
-Once we create our new Resolution bot, we can move to the Webhooks section of your proect. Select _Settings > Proect settings > Developer > Webhook_ as in the following picture:
+![image](https://user-images.githubusercontent.com/32564846/120932951-321ecb00-c6f8-11eb-94c4-9a60a6d948ab.png)
+
+Once the application is forked, press the Run button on the top bar, as in the following picture:
+
+![image](https://user-images.githubusercontent.com/32564846/120933051-ace7e600-c6f8-11eb-8728-b023a4653a8d.png)
+
+Once our Replit app is up and running, we can move to the Webhooks section of your project. Select _Settings > Project settings > Developer > Webhook_ as in the following picture:
 
 ![image](https://user-images.githubusercontent.com/32564846/120284180-4871f480-c2bc-11eb-8262-bc0d21a1049a.png)
 
@@ -47,7 +55,7 @@ Now press _Manage Webhook_ then _Add Subscription_
 
 Select *Message create* event from the menù and type the following endpoint url:
 
-https://chatbot-fallback-to-search.tiledesk.repl.co/webhook/search
+https://mychatbot-fallback-to-search.YOUR-REPL.repl.co/webhook/search
 
 ![image](https://user-images.githubusercontent.com/32564846/120284466-8ff88080-c2bc-11eb-8de6-208f2dfade0c.png)
 
@@ -66,8 +74,7 @@ Now type in something that the chatbot is not trained to reply to (i.e. 'quantum
 As you can see the bot initially replies with the default fallback phrase, immediately followed by a new reply with a suggested list of Wikipedia results.
 
 ![image](https://user-images.githubusercontent.com/32564846/120288813-eb2c7200-c2c0-11eb-915a-0f74a5c198a0.png)
-
-The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in another 
-The proposed buttons are link-buttons. Pressing the button will open the wikipedia article in the browser.
+ 
+The proposed buttons are link-buttons. Pressing the button will open the Wikipedia article in the browser.
 
 Enjoy Tiledesk!
